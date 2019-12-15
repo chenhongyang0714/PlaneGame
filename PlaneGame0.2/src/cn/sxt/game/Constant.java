@@ -5,6 +5,7 @@ package cn.sxt.game;
  * @author ³ÂºéÑó
  *  
  */
+
 public class Constant {
 
 	public static final int GAME_WIDTH = 500;
