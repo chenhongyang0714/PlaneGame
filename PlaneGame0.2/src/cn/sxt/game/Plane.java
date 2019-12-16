@@ -30,13 +30,13 @@ public class Plane extends GameObject {
 		if(live) {
 			g.drawImage(image, (int)x, (int)y, null);
 			
-			if(left) {
+			if(left && x>=10) {
 				x -= speed;
-			} else if(up) {
+			} else if(up && y>=30) {
 				y -= speed;
-			} else if(right) {
+			} else if(right && (x<=Constant.GAME_WIDTH-30)) {
 				x += speed;
-			} else if(down) {
+			} else if(down  && (y<=Constant.GAME_HEIGHT-40)) {
 				y += speed;
 			}
 		} else {

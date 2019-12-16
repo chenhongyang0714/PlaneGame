@@ -19,6 +19,7 @@ import javax.swing.JFrame;
  */
 
 public class MyGameFrame  extends  JFrame {
+	
 	static Date startDate;
 	static Date endDate;
 	static int period;  // 游戏持续的时间
@@ -42,7 +43,7 @@ public class MyGameFrame  extends  JFrame {
 	
 	Plane plane = new Plane(planeImg, 100, 100);
 	Shell [] shells = new Shell[50];  // 声明 存放子弹的数组
-	Explode explode = null;
+	Explode explode = null;  // 爆炸对象
 	
 	public void paint(Graphics g) {
 		g.drawImage(bgImg, 0, 0, null);
@@ -57,7 +58,7 @@ public class MyGameFrame  extends  JFrame {
 				plane.live = false;  // 飞机消失
 				
 				if(explode == null) {  // 防止飞机一直处于爆炸状态，则炮炸的图片一直从 e1.gif 开始播放
-					explode = new Explode(plane.x, plane.y);
+					explode = new Explode(plane.x, plane.y);  // 在飞机爆炸的坐标处显示爆炸图片
 					endDate = new Date();
 					period = (int)(endDate.getTime() - startDate.getTime()) / 1000;
 				}
@@ -118,6 +119,7 @@ public class MyGameFrame  extends  JFrame {
 		this.setVisible(true);
 		this.setSize(Constant.GAME_WIDTH, Constant.GAME_HEIGHT);
 		this.setLocation(300, 300);
+		this.setResizable(false);  // 设置窗口不可以改变大小(否则飞机将可能进入安全区)
 		
 //		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		

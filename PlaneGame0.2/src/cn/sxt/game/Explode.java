@@ -25,7 +25,7 @@ public class Explode {
 		for(int i=0; i < 16; i ++) {
 			// 加载图片
 			images[i] = GameUtil.getImage("images/explode/e" + (i + 1) + ".gif");
-			images[i].getWidth(null); 
+//			images[i].getWidth(null);  // 不知道什么意思  
 		}
 	}
 	
