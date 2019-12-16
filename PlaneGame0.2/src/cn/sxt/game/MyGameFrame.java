@@ -49,7 +49,7 @@ public class MyGameFrame  extends  JFrame {
 		g.drawImage(bgImg, 0, 0, null);
 		
 		// 画出炮弹
-		for(int i=0; i < 15; i ++) {
+		for(int i=0; i < 25; i ++) {
 			shells[i].drawSelf(g);
 			
 			// 实现矩形的碰撞检测(实时监测)
